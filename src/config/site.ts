@@ -111,7 +111,7 @@ export const siteConfig = {
     {
       name: 'Custom Website Build',
       description:
-        'A fast, modern website built specifically for your pelvic floor PT practice — with SEO baked in from day one. Every site gets its own style, tone, and content that reflects your practice’s personality. Your site, your code, yours to keep.',
+        'A fast, modern website built specifically for your pelvic floor PT practice — with SEO baked in from day one. Every site gets a unique style, tone, and content that reflects your practice. Your site, your code, yours to keep.',
       icon: 'code',
     },
     {
