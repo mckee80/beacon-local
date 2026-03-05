@@ -4,7 +4,7 @@ export const siteConfig = {
   shortName: 'Beacon Local',
   tagline: 'Websites & SEO Built for Pelvic Floor PT Practices',
   description:
-    'Custom websites, local SEO, and Google Business Profile management designed specifically for pelvic floor physical therapy practices. Built by Sean McKee.',
+    'Custom websites, local SEO, and Google Business Profile management designed specifically for pelvic floor physical therapy practices.',
 
   // URLs
   url: 'https://beacon-local.com',
@@ -15,10 +15,10 @@ export const siteConfig = {
     email: 'sean@beacon-local.com',
   },
 
-  // Owner info
+  // Owner info (used in schema.org structured data only — not displayed on site)
   owner: {
     name: 'Sean McKee',
-    title: 'Web & SEO Specialist for Pelvic Floor PT',
+    title: 'Founder, Beacon Local',
   },
 
   // Branding
@@ -40,7 +40,7 @@ export const siteConfig = {
     titleTemplate: '%s | Beacon Local',
     defaultTitle: 'Beacon Local | Websites & SEO for Pelvic Floor PT Practices',
     defaultDescription:
-      'Custom websites, local SEO, and Google Business Profile management designed specifically for pelvic floor physical therapy practices. Built by Sean McKee.',
+      'Custom websites, local SEO, and Google Business Profile management designed specifically for pelvic floor physical therapy practices.',
     defaultImage: '/images/og-image.jpg',
     keywords: [
       'pelvic floor physical therapy website',
@@ -53,7 +53,6 @@ export const siteConfig = {
       'pelvic floor therapist website',
       'PT practice online marketing',
       'Beacon Local',
-      'Sean McKee',
     ],
   },
 
@@ -75,12 +74,44 @@ export const siteConfig = {
     },
   },
 
+  // Pricing
+  pricing: {
+    setup: {
+      price: '$1,500',
+      label: 'one-time',
+      name: 'Website Build',
+      description: 'A custom, SEO-optimized website built for your practice. Your site, your code — yours to keep.',
+      features: [
+        'Custom design tailored to your practice',
+        'SEO-ready from day one',
+        'Near-perfect Lighthouse scores',
+        'Schema markup and semantic HTML',
+        'Mobile-responsive',
+        'Your website is yours — you own the code',
+      ],
+    },
+    monthly: {
+      price: '$400',
+      label: '/month',
+      name: 'SEO & Management',
+      description: 'Ongoing optimization to keep your practice growing online. No contracts — cancel anytime.',
+      features: [
+        '5 website content updates per month',
+        'Monthly SEO review and optimization',
+        'Blog posts targeting patient search terms',
+        'Google Business Profile management',
+        'Monthly performance report',
+        'Direct access — no account managers',
+      ],
+    },
+  },
+
   // Services
   services: [
     {
       name: 'Custom Website Build',
       description:
-        'A fast, modern website built specifically for your pelvic floor PT practice. Designed on Astro with SEO baked in from day one — proper schema markup, semantic HTML, and near-perfect Lighthouse scores.',
+        'A fast, modern website built specifically for your pelvic floor PT practice — with SEO baked in from day one. Proper schema markup, semantic HTML, and near-perfect Lighthouse scores. Your site, your code, yours to keep.',
       icon: 'code',
     },
     {

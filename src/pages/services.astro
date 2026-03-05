@@ -68,8 +68,74 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- Pricing -->
+  <section class="section-padding bg-surface-alt" id="pricing">
+    <div class="container-max">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-description">
+          No hidden fees. No long-term contracts. You know exactly what you're paying for.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Setup -->
+        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-sm">
+          <div class="mb-6">
+            <h3 class="text-lg mb-1">{siteConfig.pricing.setup.name}</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-heading text-brand-primary">{siteConfig.pricing.setup.price}</span>
+              <span class="text-brand-dark-light text-sm">{siteConfig.pricing.setup.label}</span>
+            </div>
+          </div>
+          <p class="text-brand-dark-light mb-6">{siteConfig.pricing.setup.description}</p>
+          <ul class="space-y-3">
+            {siteConfig.pricing.setup.features.map((feature) => (
+              <li class="flex items-start gap-3 text-brand-dark-light">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Monthly -->
+        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-sm border-2 border-brand-primary relative">
+          <div class="absolute -top-3 left-8 bg-brand-primary text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+            Ongoing Growth
+          </div>
+          <div class="mb-6">
+            <h3 class="text-lg mb-1">{siteConfig.pricing.monthly.name}</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-heading text-brand-primary">{siteConfig.pricing.monthly.price}</span>
+              <span class="text-brand-dark-light text-sm">{siteConfig.pricing.monthly.label}</span>
+            </div>
+          </div>
+          <p class="text-brand-dark-light mb-6">{siteConfig.pricing.monthly.description}</p>
+          <ul class="space-y-3">
+            {siteConfig.pricing.monthly.features.map((feature) => (
+              <li class="flex items-start gap-3 text-brand-dark-light">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center text-brand-dark-light text-sm mt-8 max-w-2xl mx-auto">
+        SEO is a compounding investment — most practices start seeing measurable results around month three. But there are no contracts and no commitments. You stay because it's working.
+      </p>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="section-padding pt-0">
+  <section class="section-padding">
     <div class="container-max">
       <div class="cta-section max-w-4xl mx-auto">
         <h3 class="text-2xl md:text-3xl">Ready to Get Started?</h3>
