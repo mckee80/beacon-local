@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { siteConfig } from '@/config/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -64,10 +65,10 @@ import { siteConfig } from '@/config/site';
           Ready to show up when patients search for pelvic floor therapy in your area? I would love to hear about your practice.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/contact/" class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
+          <a href={`${base}contact/`} class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
             Get in Touch
           </a>
-          <a href="/services/" class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary">
+          <a href={`${base}services/`} class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary">
             View Services
           </a>
         </div>

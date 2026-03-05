@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { siteConfig } from '@/config/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -75,7 +76,7 @@ import { siteConfig } from '@/config/site';
         <p class="text-lg max-w-xl mx-auto">
           Let's have a quick conversation about your practice and figure out the best path forward. No pressure, no sales pitch.
         </p>
-        <a href="/contact/" class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
+        <a href={`${base}contact/`} class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
           Get a Free Consultation
         </a>
       </div>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { siteConfig } from '@/config/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
@@ -16,10 +17,10 @@ import { siteConfig } from '@/config/site';
           I build fast, SEO-ready websites and manage ongoing local search optimization specifically for pelvic floor physical therapy practices.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="/contact/" class="btn btn-primary btn-lg">
+          <a href={`${base}contact/`} class="btn btn-primary btn-lg">
             Get a Free Consultation
           </a>
-          <a href="/services/" class="btn btn-outline btn-lg">
+          <a href={`${base}services/`} class="btn btn-outline btn-lg">
             See How It Works
           </a>
         </div>
@@ -76,7 +77,7 @@ import { siteConfig } from '@/config/site';
       </div>
 
       <div class="text-center mt-12">
-        <a href="/services/" class="btn btn-outline">
+        <a href={`${base}services/`} class="btn btn-outline">
           Learn More About Services
         </a>
       </div>
@@ -149,10 +150,10 @@ import { siteConfig } from '@/config/site';
           Let us talk about what is holding your practice back online — and how to fix it.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/contact/" class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
+          <a href={`${base}contact/`} class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
             Get Started
           </a>
-          <a href="/services/" class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary">
+          <a href={`${base}services/`} class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary">
             View Services
           </a>
         </div>
