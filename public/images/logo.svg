@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Lighthouse base -->
+  <path d="M18 38h12v4H18z" fill="#1B5E7B"/>
+  <!-- Lighthouse body -->
+  <path d="M20 20h8v18h-8z" fill="#1B5E7B"/>
+  <!-- Lighthouse middle stripe -->
+  <path d="M20 26h8v4h-8z" fill="#E8A317"/>
+  <!-- Lighthouse top (lantern room) -->
+  <path d="M19 16h10v4H19z" fill="#134A62"/>
+  <!-- Lighthouse dome -->
+  <path d="M22 12h4v4h-4z" fill="#134A62"/>
+  <path d="M21 14a3 3 0 0 1 6 0" fill="#134A62"/>
+  <!-- Light beam left -->
+  <path d="M19 17L6 12l1 3 12 4z" fill="#E8A317" opacity="0.6"/>
+  <!-- Light beam right -->
+  <path d="M29 17l13-5-1 3-12 4z" fill="#E8A317" opacity="0.6"/>
+  <!-- Light glow -->
+  <circle cx="24" cy="17" r="2.5" fill="#E8A317"/>
+  <circle cx="24" cy="17" r="4" fill="#E8A317" opacity="0.2"/>
+  <!-- Ground/waves -->
+  <path d="M12 42c4-2 8 0 12-2s8 0 12 2" stroke="#1B5E7B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,69 @@
+---
+import { siteConfig } from '@/config/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-brand-dark text-white" role="contentinfo">
+  <div class="container-max section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Brand -->
+      <div>
+        <div class="mb-4 flex items-center gap-2">
+          <img src="/images/logo.svg" alt="" class="w-7 h-7 brightness-0 invert" width="28" height="28" />
+          <span class="font-heading text-xl text-white">Beacon Local</span>
+        </div>
+        <p class="text-white/70 text-base mb-4 max-w-xs">
+          {siteConfig.tagline}
+        </p>
+        <p class="text-sm text-white/60">
+          {siteConfig.owner.name} &mdash; {siteConfig.owner.title}
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          {siteConfig.navigation.footer.quickLinks.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-white/70 text-base hover:text-white transition-colors"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contact</h3>
+        <div class="text-white/70 text-base space-y-2">
+          <p>
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              class="hover:text-white transition-colors"
+            >
+              {siteConfig.contact.email}
+            </a>
+          </p>
+          <p class="text-sm text-white/60 pt-2">
+            Serving pelvic floor PT practices nationwide
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bg-black/30 py-4">
+    <div class="container-max text-center">
+      <p class="text-white/50 text-sm">
+        &copy; {currentYear} {siteConfig.name}. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

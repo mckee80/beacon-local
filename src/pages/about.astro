@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { siteConfig } from '@/config/site';
+---
+
+<BaseLayout
+  title="About"
+  description="Meet Sean McKee, the web and SEO specialist behind Beacon Local. Learn why I focus exclusively on building websites and managing SEO for pelvic floor physical therapy practices."
+  breadcrumbs={[{ name: 'About', url: '/about/' }]}
+>
+  <!-- Hero -->
+  <section class="section-padding pt-28 bg-surface-alt">
+    <div class="container-max">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="section-label">About</span>
+        <h1 class="mb-4">The Person Behind Beacon Local</h1>
+        <p class="section-description">
+          I'm Sean McKee — a web and SEO specialist who works exclusively with pelvic floor physical therapy practices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="section-padding">
+    <div class="container-max">
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-6 text-brand-dark-light text-lg leading-relaxed">
+          <p>
+            I started Beacon Local because I saw pelvic floor PTs struggling with the same problem: paying too much for generic websites that load slowly, rank poorly, and don't bring in patients.
+          </p>
+          <p>
+            After working in SEO and web development, I realized the best results come from going deep in one niche rather than being a generalist. Pelvic floor PT is that niche. I understand your patients, your services, and what it takes to rank in your space.
+          </p>
+          <p>
+            Every site I build uses modern static-site technology with proper schema markup, semantic HTML, and lightning-fast load times. And because I also manage your SEO and content, everything works together — your site, your Google Business Profile, and your search rankings.
+          </p>
+
+          <!-- Philosophy Box -->
+          <div class="bg-surface-alt p-6 rounded-lg my-8 border-l-4 border-brand-primary">
+            <h3 class="text-base mb-2 text-brand-primary-dark font-heading font-semibold">My Approach</h3>
+            <p class="mb-2">
+              I build your site, I manage your SEO, and I handle your content. One person owns the entire stack. No coordinating between a web developer and an SEO agency. No waiting on someone else to make a change.
+            </p>
+            <p class="mb-0">
+              No jargon, no fluff, no long-term contracts. Just clear communication and measurable results for your practice.
+            </p>
+          </div>
+
+          <p>
+            Whether you need a new practice website, help getting found on Google, or a content plan to start ranking for the terms your patients are searching — I can help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding pt-0">
+    <div class="container-max">
+      <div class="cta-section max-w-4xl mx-auto">
+        <h3 class="text-2xl md:text-3xl">Let's Get Your Practice Found</h3>
+        <p class="text-lg max-w-xl mx-auto">
+          Ready to show up when patients search for pelvic floor therapy in your area? I would love to hear about your practice.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact/" class="btn btn-primary bg-brand-accent border-brand-accent hover:bg-brand-accent-dark hover:border-brand-accent-dark">
+            Get in Touch
+          </a>
+          <a href="/services/" class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary">
+            View Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

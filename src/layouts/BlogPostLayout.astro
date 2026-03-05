@@ -1,0 +1,140 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { siteConfig } from '@/config/site';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    author?: string;
+    image?: string;
+    tags?: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const authorDisplay = frontmatter.author || siteConfig.owner.name;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  datePublished: frontmatter.pubDate,
+  author: {
+    '@type': 'Person',
+    name: frontmatter.author || siteConfig.owner.name,
+    jobTitle: siteConfig.owner.title,
+    url: `${siteConfig.url}/about/`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: siteConfig.name,
+  },
+};
+---
+
+<BaseLayout
+  title={`${frontmatter.title} | ${siteConfig.shortName} Blog`}
+  description={frontmatter.description}
+  image={frontmatter.image}
+  type="article"
+  publishedTime={frontmatter.pubDate}
+  jsonLd={articleSchema}
+  breadcrumbs={[
+    { name: 'Blog', url: '/blog/' },
+    { name: frontmatter.title, url: Astro.url.pathname },
+  ]}
+>
+  <article class="section-padding pt-28">
+    <div class="container-max">
+      <div class="max-w-3xl mx-auto">
+        <!-- Back to blog -->
+        <a href="/blog/" class="inline-flex items-center gap-2 text-brand-primary hover:text-brand-primary-dark transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+
+        <!-- Article header -->
+        <header class="mb-8">
+          <div class="flex flex-wrap gap-2 mb-4">
+            {frontmatter.tags?.map((tag) => (
+              <span class="text-xs font-medium uppercase tracking-wider text-brand-primary bg-brand-primary/10 px-3 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl mb-4">{frontmatter.title}</h1>
+          <div class="flex items-center gap-4 text-brand-dark-light mb-6">
+            <span>{authorDisplay}</span>
+            <span>|</span>
+            <time datetime={frontmatter.pubDate.toISOString()}>{formattedDate}</time>
+          </div>
+          {frontmatter.image && (
+            <img
+              src={frontmatter.image}
+              alt={frontmatter.title}
+              class="w-full h-64 md:h-80 object-cover rounded-2xl"
+              loading="eager"
+            />
+          )}
+        </header>
+
+        <!-- Article content -->
+        <div class="prose prose-lg max-w-none">
+          <slot />
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 p-8 bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-2xl text-center">
+          <h3 class="text-white text-2xl mb-2">Ready to Grow Your Online Presence?</h3>
+          <p class="text-white/85 mb-6">Let's talk about how SEO and a great website can bring you more customers.</p>
+          <a href="/contact/" class="btn btn-primary bg-white text-brand-primary hover:bg-gray-100 border-white">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .prose h2 {
+    @apply text-2xl font-heading font-semibold text-brand-dark mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-heading font-semibold text-brand-dark mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply text-brand-dark-light mb-4 leading-relaxed;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-4 space-y-2 text-brand-dark-light;
+  }
+
+  .prose li {
+    @apply leading-relaxed;
+  }
+
+  .prose strong {
+    @apply text-brand-dark font-semibold;
+  }
+
+  .prose img {
+    @apply w-full rounded-xl my-6;
+  }
+</style>
