@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://mckee80.github.io',
-  base: '/beacon-local',
+  base: '/beacon-local/',
   output: 'static',
   compressHTML: true,
   integrations: [mdx(), sitemap()],
