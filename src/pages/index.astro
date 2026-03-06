@@ -6,21 +6,29 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout>
   <!-- Hero Section -->
-  <section class="hero-gradient relative overflow-hidden min-h-[80vh] flex items-center pt-16">
+  <section class="relative overflow-hidden min-h-[80vh] flex items-center pt-16">
+    <div class="absolute inset-0">
+      <img
+        src={`${base}images/hero-lighthouse.jpg`}
+        alt=""
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-brand-dark/70"></div>
+    </div>
     <div class="container-max relative z-10 py-20">
       <div class="max-w-2xl">
-        <span class="section-label">Websites & SEO for Pelvic Floor PT</span>
-        <h1 class="mb-6">
+        <span class="section-label text-brand-accent">Websites & SEO for Pelvic Floor PT</span>
+        <h1 class="mb-6 text-white">
           Patients Are Looking for You
         </h1>
-        <p class="text-lg text-brand-dark-light mb-8 max-w-xl">
+        <p class="text-lg text-white/80 mb-8 max-w-xl">
           I help pelvic floor PT practices get found online — with an affordable website and SEO package built for your specialty.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href={`${base}contact/`} class="btn btn-primary btn-lg">
             Get a Free Consultation
           </a>
-          <a href={`${base}services/`} class="btn btn-outline btn-lg">
+          <a href={`${base}services/`} class="btn bg-transparent text-white border-white hover:bg-white hover:text-brand-primary btn-lg">
             See How It Works
           </a>
         </div>
