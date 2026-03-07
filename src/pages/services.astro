@@ -10,12 +10,16 @@ const base = import.meta.env.BASE_URL;
   breadcrumbs={[{ name: 'Services', url: '/services/' }]}
 >
   <!-- Hero -->
-  <section class="section-padding pt-28 bg-surface-alt">
-    <div class="container-max">
+  <section class="relative pt-28 pb-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={`${base}images/hero-lighthouse.jpg`} alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-brand-dark/70"></div>
+    </div>
+    <div class="container-max relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <span class="section-label">Services</span>
-        <h1 class="mb-4">How Beacon Local Helps Your Practice Grow</h1>
-        <p class="section-description">
+        <span class="section-label text-brand-accent">Services</span>
+        <h1 class="mb-4 text-white">How Beacon Local Helps Your Practice Grow</h1>
+        <p class="section-description text-white/80">
           A custom website and ongoing SEO — everything your pelvic floor PT practice needs to get found by more patients online.
         </p>
       </div>
