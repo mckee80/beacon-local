@@ -129,7 +129,7 @@ export const siteConfig = {
     {
       name: 'Content Strategy',
       description:
-        'Blog posts and service pages that target what pelvic floor PT patients actually search for — from "pelvic floor therapy near me" to specific conditions like prolapse, incontinence, and postpartum recovery.',
+        'Blog posts and service pages that target what pelvic floor PT patients actually search for — from "pelvic floor therapy near me" to specific conditions like prolapse, incontinence, postpartum recovery, and chronic pelvic pain.',
       icon: 'pencil',
     },
     {
