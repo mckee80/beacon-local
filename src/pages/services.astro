@@ -72,8 +72,118 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- What a month looks like -->
+  <section class="section-padding bg-surface-alt">
+    <div class="container-max">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="section-label">In Practice</span>
+        <h2 class="section-title">What a Typical Month Looks Like</h2>
+        <p class="section-description">
+          Every month includes a website update, active GBP management, and a recommendations report written specifically for your practice.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <button class="lightbox-trigger block w-full text-left" aria-label="View website update example full size">
+            <img
+              src={`${base}images/portfolio-agpt.jpg`}
+              alt="Example website content update for a pelvic floor PT practice"
+              class="w-full h-48 object-cover object-top cursor-zoom-in"
+              loading="lazy"
+            />
+          </button>
+          <div class="p-6">
+            <h3 class="text-lg mb-2">Website Update</h3>
+            <p class="text-brand-dark-light text-sm leading-relaxed">A new service page section, updated condition list, or refreshed copy — keeping your site current and giving Google fresh content to index.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <button class="lightbox-trigger block w-full text-left" aria-label="View GBP post example full size">
+            <img
+              src={`${base}images/gbp-post.png`}
+              alt="Example Google Business Profile post for a pelvic floor PT practice"
+              class="w-full h-48 object-cover object-top cursor-zoom-in"
+              loading="lazy"
+            />
+          </button>
+          <div class="p-6">
+            <h3 class="text-lg mb-2">GBP Post</h3>
+            <p class="text-brand-dark-light text-sm leading-relaxed">Written and published to your Google Business Profile, targeting a search term patients in your area are actively using that month.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <button class="lightbox-trigger block w-full text-left" aria-label="View trend report example full size">
+            <img
+              src={`${base}images/recommendations.png`}
+              alt="Example monthly trend-based recommendations report"
+              class="w-full h-48 object-cover object-top cursor-zoom-in"
+              loading="lazy"
+            />
+          </button>
+          <div class="p-6">
+            <h3 class="text-lg mb-2">Trend Report</h3>
+            <p class="text-brand-dark-light text-sm leading-relaxed">A short, specific document covering what's rising in pelvic floor PT searches and exactly what we should do about it for your practice.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox overlay -->
+      <div id="lightbox" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
+        <p id="lightbox-title" class="sr-only"></p>
+        <button id="lightbox-close" class="absolute top-4 right-4 text-white/80 hover:text-white" aria-label="Close image preview">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain" />
+      </div>
+
+      <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement;
+        let triggerBtn: HTMLElement | null = null;
+
+        document.querySelectorAll('.lightbox-trigger').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            triggerBtn = btn as HTMLElement;
+            const img = btn.querySelector('img') as HTMLImageElement;
+            // Set content before revealing so screen readers get the right announcement
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxTitle.textContent = img.alt;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            lightbox.setAttribute('aria-hidden', 'false');
+            closeBtn.focus();
+          });
+        });
+
+        function closeLightbox() {
+          lightbox.classList.add('hidden');
+          lightbox.classList.remove('flex');
+          lightbox.setAttribute('aria-hidden', 'true');
+          triggerBtn?.focus();
+        }
+
+        // Focus trap — only one focusable element (close button), so prevent Tab from escaping
+        lightbox.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') {
+            e.preventDefault();
+            closeBtn.focus();
+          }
+          if (e.key === 'Escape') closeLightbox();
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      </script>
+    </div>
+  </section>
+
   <!-- Pricing -->
-  <section class="section-padding bg-surface-alt" id="pricing">
+  <section class="section-padding" id="pricing">
     <div class="container-max">
       <div class="text-center mb-12 max-w-2xl mx-auto">
         <span class="section-label">Pricing</span>

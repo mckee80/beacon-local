@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with Beacon Local for custom pelvic floor PT websites, local SEO, and Google Business Profile management."
+  description="Get in touch with Beacon Local to talk about getting your pelvic floor PT practice found online. Free consultation, no obligation."
   breadcrumbs={[{ name: 'Contact', url: '/contact/' }]}
 >
   <!-- Hero -->
@@ -20,75 +20,229 @@ const base = import.meta.env.BASE_URL;
         <span class="section-label text-brand-accent">Contact</span>
         <h1 class="mb-4 text-white">Let's Talk About Your Practice</h1>
         <p class="section-description text-white/80">
-          Have a question about getting your practice found online? Reach out and I'll get back to you within one business day.
+          Tell us a little about your practice and we'll get back to you within one business day.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Info -->
+  <!-- Contact Section -->
   <section class="section-padding">
     <div class="container-max">
-      <div class="max-w-2xl mx-auto">
-        <div class="bg-white p-8 lg:p-12 rounded-2xl shadow-sm text-center">
+      <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+
+        <!-- Form -->
+        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-sm">
           <h2 class="text-2xl mb-6">Get in Touch</h2>
 
-          <div class="space-y-6">
-            <!-- Email -->
-            <div>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-2">Email</h3>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                class="text-brand-primary text-lg hover:text-brand-primary-dark transition-colors font-medium"
+          <form
+            id="contact-form"
+            name="contact"
+            netlify
+            netlify-honeypot="bot-field"
+            novalidate
+          >
+            <!-- Netlify hidden fields -->
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-brand-dark mb-1">Your name <span class="text-brand-accent" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition"
+                  placeholder="Jane Smith"
+                />
+              </div>
+
+              <div>
+                <label for="practice" class="block text-sm font-medium text-brand-dark mb-1">Practice name <span class="text-brand-accent" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="practice"
+                  name="practice"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition"
+                  placeholder="Smith Pelvic Health PT"
+                />
+              </div>
+
+              <div>
+                <label for="location" class="block text-sm font-medium text-brand-dark mb-1">City &amp; state <span class="text-brand-accent" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  autocomplete="address-level2"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition"
+                  placeholder="Austin, TX"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-brand-dark mb-1">Email address <span class="text-brand-accent" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition"
+                  placeholder="jane@smithpelvichealth.com"
+                />
+              </div>
+
+              <div>
+                <label for="website" class="block text-sm font-medium text-brand-dark mb-1">
+                  Current website
+                  <span class="text-brand-dark-light font-normal ml-1">(optional)</span>
+                </label>
+                <input
+                  type="url"
+                  id="website"
+                  name="website"
+                  autocomplete="url"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition"
+                  placeholder="https://yourpractice.com"
+                />
+                <p class="text-xs text-brand-dark-light mt-1">Don't have one yet? That's okay — we'd love to help.</p>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-brand-dark mb-1">What are you looking for? <span class="text-brand-accent" aria-hidden="true">*</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="4"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-200 text-brand-dark placeholder:text-brand-dark-light/60 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition resize-none"
+                  placeholder="Tell us a bit about your practice and what you'd like to improve online..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary w-full justify-center"
               >
-                {siteConfig.contact.email}
-              </a>
-            </div>
+                Send Message
+              </button>
 
-            <!-- Scheduling placeholder -->
-            <div class="pt-4 border-t border-surface-alt">
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-2">Schedule a Call</h3>
-              <p class="text-brand-dark-light mb-4">
-                Prefer to talk it through? Book a free 15-minute consultation.
+              <p id="form-error" class="hidden text-sm text-red-600 text-center" role="alert">
+                Something went wrong. Please email us directly at <a href={`mailto:${siteConfig.contact.email}`} class="underline">{siteConfig.contact.email}</a>.
               </p>
-              <span class="inline-block text-sm text-brand-dark-light italic">
-                Scheduling link coming soon
-              </span>
             </div>
+          </form>
 
-            <!-- What to expect -->
-            <div class="pt-4 border-t border-surface-alt text-left">
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-4 text-center">What to Expect</h3>
-              <ul class="space-y-3 text-brand-dark-light">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Response within one business day</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Free initial consultation — no obligation</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Honest assessment of your online presence</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Clear pricing with no surprises</span>
-                </li>
-              </ul>
+          <!-- Success message (hidden until submission) -->
+          <div id="form-success" class="hidden text-center py-8">
+            <div class="w-14 h-14 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
             </div>
+            <h3 class="text-xl mb-2">Message received</h3>
+            <p class="text-brand-dark-light">We'll be in touch within one business day.</p>
           </div>
         </div>
+
+        <!-- Info panel -->
+        <div class="space-y-8">
+
+          <!-- Direct email -->
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-2">Prefer email?</h3>
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              class="text-brand-primary text-lg hover:text-brand-primary-dark transition-colors font-medium"
+            >
+              {siteConfig.contact.email}
+            </a>
+          </div>
+
+          <!-- Scheduling placeholder -->
+          <div class="pt-6 border-t border-surface-alt">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-2">Schedule a Call</h3>
+            <p class="text-brand-dark-light mb-4">
+              Prefer to talk it through? Book a free 15-minute consultation.
+            </p>
+            <span class="inline-block text-sm text-brand-dark-light italic">
+              Scheduling link coming soon
+            </span>
+          </div>
+
+          <!-- What to expect -->
+          <div class="pt-6 border-t border-surface-alt">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-brand-dark-light mb-4">What to Expect</h3>
+            <ul class="space-y-3 text-brand-dark-light">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Response within one business day</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Free initial consultation — no obligation</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="true" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Honest assessment of your online presence</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Clear pricing with no surprises</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form) as any).toString(),
+        });
+
+        if (response.ok) {
+          form.classList.add('hidden');
+          successMsg?.classList.remove('hidden');
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch {
+        errorMsg?.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
 </BaseLayout>

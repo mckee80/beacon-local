@@ -100,7 +100,7 @@ export const siteConfig = {
         'Monthly SEO review and optimization',
         'Blog posts targeting patient search terms',
         'Google Business Profile management',
-        'Monthly performance report',
+        'Monthly performance report + trend-based recommendations',
         'Direct access — no account managers',
       ],
     },
@@ -135,7 +135,7 @@ export const siteConfig = {
     {
       name: 'Monthly Reporting',
       description:
-        "Clear, plain-English monthly reports showing what's working, what's changed, and where we're headed. No jargon, no vanity metrics — just the numbers that matter to your practice.",
+        'Every month you get a plain-English performance update and a trend-based recommendations report — specific actions for your practice based on what patients are actually searching for right now. Not a generic dashboard. Concrete next steps.',
       icon: 'chart',
     },
   ],

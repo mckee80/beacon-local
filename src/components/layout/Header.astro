@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
     <nav class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href={base} class="flex items-center gap-2">
-        <img src={`${base}images/logo.svg`} alt="" class="w-8 h-8" width="32" height="32" />
+        <img src={`${base}images/logo.svg`} alt="" role="presentation" class="w-8 h-8" width="32" height="32" />
         <span class="font-heading text-xl text-brand-primary leading-tight">Beacon</span>
         <span class="font-heading text-xl text-brand-dark leading-tight">Local</span>
       </a>
@@ -20,6 +20,7 @@ const base = import.meta.env.BASE_URL;
         class="lg:hidden flex flex-col justify-center w-8 h-8 bg-transparent border-0 cursor-pointer"
         aria-label="Toggle navigation"
         aria-expanded="false"
+        aria-controls="nav-menu"
         data-nav-toggle
       >
         <span class="hamburger block w-full h-0.5 bg-brand-dark transition-all relative before:content-[''] before:absolute before:left-0 before:-top-2 before:w-full before:h-0.5 before:bg-brand-dark before:transition-all after:content-[''] after:absolute after:left-0 after:top-2 after:w-full after:h-0.5 after:bg-brand-dark after:transition-all"></span>
@@ -47,9 +48,11 @@ const base = import.meta.env.BASE_URL;
 
       <!-- Mobile navigation -->
       <ul
+        id="nav-menu"
         class="nav-menu fixed top-16 left-0 right-0 bg-white flex-col p-8 gap-4 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-300 lg:hidden"
         data-nav-menu
         role="menu"
+        aria-hidden="true"
       >
         {navigation.map((item) => (
           <li role="none">
@@ -109,12 +112,14 @@ const base = import.meta.env.BASE_URL;
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
     menu?.classList.toggle('active');
+    menu?.setAttribute('aria-hidden', String(isOpen));
   });
 
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       toggle?.setAttribute('aria-expanded', 'false');
       menu?.classList.remove('active');
+      menu?.setAttribute('aria-hidden', 'true');
     });
   });
 
