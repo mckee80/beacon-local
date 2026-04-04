@@ -15,7 +15,7 @@ export const siteConfig = {
     email: 'sean@beacon-local.com',
   },
 
-  // Owner info (used in schema.org structured data only — not displayed on site)
+  // Owner info (used in schema.org structured data only, not displayed on site)
   owner: {
     name: 'Sean McKee',
     title: 'Founder, Beacon Local',
@@ -101,7 +101,7 @@ export const siteConfig = {
         'Blog posts targeting patient search terms',
         'Google Business Profile management',
         'Monthly performance report and trend-based recommendations',
-        'Search is changing fast with Google updates and AI. We keep your site current',
+        'Ongoing protection from search changes, AI shifts, and competitor moves',
         'Direct access, no account managers',
       ],
     },
@@ -112,31 +112,31 @@ export const siteConfig = {
     {
       name: 'Custom Website Build',
       description:
-        'A fast, modern website built specifically for your pelvic floor PT practice — with SEO baked in from day one. Every site gets a unique style, tone, and content that reflects your practice. Your site, your code, yours to keep.',
+        'A fast, modern website built specifically for your pelvic floor PT practice, with SEO baked in from day one. Every site gets a unique style, tone, and content that reflects your practice. Your site, your code, yours to keep.',
       icon: 'code',
     },
     {
       name: 'Google Business Profile Management',
       description:
-        'Your GBP is often the first thing patients see. I optimize your listing, create regular posts, and build a review strategy that helps you stand out in local search results.',
+        'Your Google Business Profile is often the first thing patients see. Google now treats it like an active platform. Profiles with weekly posts, fresh photos, and a steady flow of reviews rank higher than inactive ones. We keep yours active and optimized so it keeps working for you.',
       icon: 'map',
     },
     {
       name: 'Local SEO',
       description:
-        'Citation cleanup, local rank tracking, and technical optimization so your practice shows up when patients in your area search for pelvic floor therapy.',
+        'We monitor your local rankings, keep your citations clean, and adjust your technical SEO when things shift so your practice keeps showing up when patients in your area search for pelvic floor therapy.',
       icon: 'search',
     },
     {
       name: 'Content Strategy',
       description:
-        'Blog posts and service pages that target what pelvic floor PT patients actually search for — from "pelvic floor therapy near me" to specific conditions like prolapse, incontinence, postpartum recovery, and chronic pelvic pain.',
+        'Your site grows every month with new content targeting what patients actually search for, from "pelvic floor therapy near me" to specific conditions like prolapse, incontinence, postpartum recovery, and chronic pelvic pain. More pages means more ways for patients to find you.',
       icon: 'pencil',
     },
     {
       name: 'Monthly Reporting',
       description:
-        'Every month you get a plain-English performance update and a trend-based recommendations report — specific actions for your practice based on what patients are actually searching for right now. Not a generic dashboard. Concrete next steps.',
+        'Every month you get a plain-English performance update and a trend-based recommendations report with specific actions for your practice based on what patients are actually searching for right now. Not a generic dashboard. Concrete next steps.',
       icon: 'chart',
     },
   ],
