@@ -95,6 +95,7 @@ const base = import.meta.env.BASE_URL;
           <div class="p-6">
             <h3 class="text-lg mb-2">Website Update</h3>
             <p class="text-brand-dark-light text-sm leading-relaxed">New content based on what patients are searching for. A service page section, a condition page, or a blog post. Your site keeps growing, and Google favors sites that publish fresh, relevant content.</p>
+            <a href="https://agphysicaltherapypc.com" target="_blank" rel="noopener noreferrer" class="inline-block text-brand-primary text-sm font-medium mt-2 hover:underline">See a live example &rarr;</a>
           </div>
         </div>
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
@@ -123,6 +124,7 @@ const base = import.meta.env.BASE_URL;
           <div class="p-6">
             <h3 class="text-lg mb-2">Trend Report</h3>
             <p class="text-brand-dark-light text-sm leading-relaxed">A short, specific document covering what's happening in pelvic floor PT search trends, what patients are looking for, and what we recommend for your practice next month.</p>
+            <a href={`${base}sample-report/`} target="_blank" rel="noopener noreferrer" class="inline-block text-brand-primary text-sm font-medium mt-2 hover:underline">See a sample report &rarr;</a>
           </div>
         </div>
       </div>
@@ -217,10 +219,7 @@ const base = import.meta.env.BASE_URL;
         </div>
 
         <!-- Monthly -->
-        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-sm border-2 border-brand-primary relative">
-          <div class="absolute -top-3 left-8 bg-brand-primary text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
-            Ongoing Growth
-          </div>
+        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-sm">
           <div class="mb-6">
             <h3 class="text-lg mb-1">{siteConfig.pricing.monthly.name}</h3>
             <div class="flex items-baseline gap-1">
